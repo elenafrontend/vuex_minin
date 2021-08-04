@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <PostForm></PostForm>
     <h1>{{ postCount }}</h1>
     <article class="post" v-for='post of allPosts' :key='post.id'>
       <h2 class="post__title">{{ post.title }}</h2>
@@ -9,9 +10,11 @@
 </template>
 
 <script>
+import PostForm from './components/PostForm'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  components: { PostForm },
   name: 'App',
 
   // В компонент из Vuex данные можно получить 2 способами:
