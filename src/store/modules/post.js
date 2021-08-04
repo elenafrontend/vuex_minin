@@ -10,6 +10,12 @@ export default {
   mutations: {
     updatePosts(state, posts) {
       state.posts = posts
+    },
+
+    // тк добавление new post синхронная операция изменения state
+    // добавляем в мутации
+    createPost(state, newPost) {
+      state.posts.unshift(newPost)
     }
   },
   state: {
