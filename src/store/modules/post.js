@@ -26,8 +26,17 @@ export default {
       return state.posts
     },
 
-    postCount(state) {
-      return state.posts.length
-    }
+    postCount(state, getters) {
+      return getters.validPosts.length
+    },
+
+    // в getters часто размещают f фильтрации/сортировки/валидации
+    // создаем функцию для валидации posts из state
+    validPosts(state) {
+      return state.posts.filter((post) => {
+        // фильтруем только те посты, у которых есть title и body
+        return post.title && post.body
+      })
+    } 
   },
 }
