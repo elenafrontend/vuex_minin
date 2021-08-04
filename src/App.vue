@@ -34,7 +34,7 @@ export default {
   methods: mapActions(['fetchPosts']),
 
   async mounted() {
-    this.fetchPosts()
+    this.fetchPosts(4)
   }
 }
 </script>
