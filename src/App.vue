@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'App',
@@ -31,8 +31,10 @@ export default {
 
   computed: mapGetters(["allPosts"]),
 
+  methods: mapActions(['fetchPosts']),
+
   async mounted() {
-    this.$store.dispatch('fetchPosts')
+    this.fetchPosts()
   }
 }
 </script>
