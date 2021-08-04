@@ -32,9 +32,7 @@ export default {
   computed: mapGetters(["allPosts"]),
 
   async mounted() {
-    const responce = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=3')
-    const posts = await responce.json()
-    this.posts = posts
+    this.$store.dispatch('fetchPosts')
   }
 }
 </script>
