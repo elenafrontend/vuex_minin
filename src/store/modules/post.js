@@ -18,6 +18,10 @@ export default {
   getters: {
     allPosts(state) {
       return state.posts
+    },
+
+    postCount(state) {
+      return state.posts.length
     }
   },
 }

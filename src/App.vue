@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>{{ postCount }}</h1>
     <article class="post" v-for='post of allPosts' :key='post.id'>
       <h2 class="post__title">{{ post.title }}</h2>
       <p class="post__body">{{ post.body }}</p>
@@ -29,7 +30,7 @@ export default {
   // В таких случаях можно использовать функцию mapState, mapGetters
   // которые автоматически генерирует вычисляемые свойства
 
-  computed: mapGetters(["allPosts"]),
+  computed: mapGetters(["allPosts", "postCount"]),
 
   methods: mapActions(['fetchPosts']),
 
